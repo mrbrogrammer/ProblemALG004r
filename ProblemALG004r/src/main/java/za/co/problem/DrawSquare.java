@@ -12,35 +12,76 @@ public class DrawSquare {
     public static int getDimensions() {
 
         Scanner Scanner = new Scanner(System.in);
-        Random random = new Random();
-        int x = random.nextInt(9);
 
         int num = Scanner.nextInt();
-
-        System.out.println(x);
-        System.out.println(num);
         return num;
+    }
+
+    public static int[][] randomSquare(int nrRotation, int nrBlocks) {
+        int di = (int) pow(nrBlocks,2);
+        Random random = new Random();
+
+
+        // create method that will return random numbers
+        int[][] arr = new int[nrBlocks][nrBlocks];
+        for (int i = 0; i != nrBlocks; i++) {
+
+            int k = 0;
+
+            while (Count(nrBlocks, arr)[i] != 15) {
+
+                if (k < nrBlocks) {
+                    arr[i][k] = random.nextInt(9);
+                    k++;
+
+                } else {
+                    k = 0;
+                }
+            }
+
+//            for (int j = 0; j < nrBlocks; j++) {
+//
+//                arr[i][j] = random.nextInt(9);
+//
+//                if (Count(nrBlocks, arr)[k] != 15){
+//                    arr[i][j] = random.nextInt(9);
+//                } else {
+//                    k++;
+//
+//                }
+////                while (Count(nrBlocks, arr)[k] != 15){
+////                    arr[i][j] = random.nextInt(9);
+////                }
+////                k++;
+//            }
+        }
+
+        return arr;
+    }
+
+    public static int[] Count(int dimensions, int[][] arr){
+        // validate whether rows and columns, equate to n
+
+
+        int[] count = new int[dimensions];
+        for (int i = 0; i < arr.length; i++) {
+            int j = 0;
+            while (j != arr.length){
+                count[i] += arr[i][j];
+                j++;
+            }
+
+        }
+        return count;
     }
 
     public static String makeBorders(int dimensions){
 
-        int di = (int) pow(dimensions,2);
-        System.out.println(di);
+        int[][] arr = randomSquare(0, dimensions);
 
-        int[][] arr = new int[dimensions][dimensions];
-        for (int i = 0; i != dimensions; i++) {
-
-
-            for (int j = 0; j < dimensions; j++) {
-                    
-                arr[i][j] += 0;
-                System.out.printf("*");
-
-            }
-            System.out.printf("\n");
+        for (int j = 0; j < arr.length; j++) {
+            System.out.println(Arrays.toString(arr[j]));
         }
-
-        System.out.printf(Arrays.toString(arr[2]));
         return "";
     }
 
