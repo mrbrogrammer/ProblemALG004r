@@ -2,7 +2,6 @@ package za.co.problem;
 
 import java.util.*;
 import java.lang.*;
-import java.math.*;
 
 import static java.lang.Math.pow;
 
@@ -31,29 +30,13 @@ public class DrawSquare {
             while (Count(nrBlocks, arr)[i] != 15) {
 
                 if (k < nrBlocks) {
-                    arr[i][k] = random.nextInt(9);
+                    arr[i][k] = random.nextInt();
                     k++;
 
                 } else {
                     k = 0;
                 }
             }
-
-//            for (int j = 0; j < nrBlocks; j++) {
-//
-//                arr[i][j] = random.nextInt(9);
-//
-//                if (Count(nrBlocks, arr)[k] != 15){
-//                    arr[i][j] = random.nextInt(9);
-//                } else {
-//                    k++;
-//
-//                }
-////                while (Count(nrBlocks, arr)[k] != 15){
-////                    arr[i][j] = random.nextInt(9);
-////                }
-////                k++;
-//            }
         }
 
         return arr;
