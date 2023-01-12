@@ -1,7 +1,6 @@
 package za.co.problem;
 
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 import java.lang.*;
 import java.math.*;
 
@@ -27,16 +26,21 @@ public class DrawSquare {
 
         int di = (int) pow(dimensions,2);
         System.out.println(di);
+
+        int[][] arr = new int[dimensions][dimensions];
         for (int i = 0; i != dimensions; i++) {
 
 
             for (int j = 0; j < dimensions; j++) {
+                    
+                arr[i][j] += 0;
                 System.out.printf("*");
 
             }
             System.out.printf("\n");
         }
 
+        System.out.printf(Arrays.toString(arr[2]));
         return "";
     }
 
